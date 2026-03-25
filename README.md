@@ -44,6 +44,7 @@ Lead → Twilio Call → Voicemail Drop
 → Inbound Reply Handling
 → Discord Inbox (Receive + Reply)
 → PHP Backend (Bluehost)
+
 ---
 
 ## Tech Stack
@@ -122,6 +123,7 @@ Inactive Lead → Kickoff (Call + SMS + Email)
 → Response Handling
 → CRM Logging
 → Discord Inbox (Receive + Reply)
+
 ---
 
 ### Key Logic
