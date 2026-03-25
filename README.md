@@ -1,4 +1,4 @@
-# outreach-engine
+# Outreach Engine
 Automated outreach system using Twilio, Discord, Nutshell, and Bluehost
 
 ## Overview
@@ -25,8 +25,6 @@ Lead → Twilio Call → Voicemail Drop
 → Discord Alert
 → PHP Backend (Bluehost)
 
----
-
 ## Tech Stack
 
 - Twilio (Calls, SMS, Webhooks)
@@ -35,8 +33,6 @@ Lead → Twilio Call → Voicemail Drop
 - PHP (Backend Logic)
 - Bluehost (Hosting Environment)
 
----
-
 ## Key Architecture Decisions
 
 - Separated outbound and inbound logic for clarity and scalability
@@ -44,8 +40,6 @@ Lead → Twilio Call → Voicemail Drop
 - Centralized all activity logging inside Nutshell CRM
 - Added Discord as a visibility layer for inbound messages
 - Used PHP on Bluehost to handle backend processing and integrations
-
----
 
 ## Modules
 
@@ -75,3 +69,37 @@ Lead → Twilio Call → Voicemail Drop
 ## Notes
 
 This system is continuously evolving and will expand to include additional automation layers such as lead intake processing and AI-driven communication.
+
+## Reactivation Engine
+
+The Reactivation Engine is a sub-system designed to re-engage inactive or unresponsive leads through structured follow-up campaigns.
+
+### Campaign Structure
+
+- Kickoff Campaign (Monday)
+  - Voicemail drop
+  - SMS follow-up
+
+- Follow-Up Campaign (Wednesday)
+  - Second message touchpoint
+  - Re-engagement attempt
+
+### System Flow
+Inactive Lead → Kickoff (Voicemail + SMS)
+→ Wait Period
+→ Follow-Up Message
+→ Response Handling
+→ CRM Logging
+
+### Key Logic
+
+- Uses separate launcher and worker functions
+- Tracks responses and engagement status
+- Avoids duplicate messaging
+- Logs all activity inside Nutshell CRM
+
+### Outcome
+
+- Increased response rate from old leads
+- Structured follow-up system
+- Reduced manual outreach
